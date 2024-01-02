@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+    return "Hello World"
+
 @app.route("/api", methods=['GET'])
 def returnascii():
     d = {}
@@ -10,5 +14,5 @@ def returnascii():
     d['output'] = answer
     return d
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
